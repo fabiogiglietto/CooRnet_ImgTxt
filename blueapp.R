@@ -4,7 +4,7 @@ library(igraph)
 
 ### start parameters ###
 # start from the link to a CSV dataset of Facebook posts returned by a CrowdTangle Search export
-ct_histdata_csv_1 = "" # copy/post the link to the CSV from the email recieved
+ct_histdata_csv_1 = "https://ct-download.s3.us-west-2.amazonaws.com/2022-03-07-09-17-10-CET-search-csv-export.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20220307T081713Z&X-Amz-SignedHeaders=host&X-Amz-Expires=604799&X-Amz-Credential=AKIAV4ALADSXYMC4BVHY%2F20220307%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Signature=aa080eda6bb607036c02d5f8ab932b130749c79c71fe715503cecafa27b57e9c" # copy/post the link to the CSV from the email recieved
 # ct_histdata_csv_2 = ""
 coordination_internal <- "60 secs" # set your coordination internal
 percentile_edge_weight <- 0.9 # determines the minimum number of repetition used to conside an account as coordinated
@@ -126,3 +126,7 @@ highly_connected_coordinated_entities <- igraph::as_data_frame(highly_connected_
 rownames(highly_connected_coordinated_entities) <- 1:nrow(highly_connected_coordinated_entities)
 
 highly_c_list <- list(highly_connected_g, highly_connected_coordinated_entities, q) # output in list format. Includes the list of coordinated accounts and a graphml file that you can visualize in Gephi
+
+# export output files
+write.csv(highly_connected_coordinated_entities, "highly_connected_coordinated_entities.csv")
+write.graph(highly_connected_g, "highly_connected_g.graphml", format="graphml")

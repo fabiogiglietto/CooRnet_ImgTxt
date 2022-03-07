@@ -125,3 +125,7 @@ highly_connected_coordinated_entities <- igraph::as_data_frame(highly_connected_
 rownames(highly_connected_coordinated_entities) <- 1:nrow(highly_connected_coordinated_entities)
 
 highly_c_list <- list(highly_connected_g, highly_connected_coordinated_entities, q) # output in list format. Includes the list of coordinated accounts and a graphml file that you can visualize in Gephi
+
+# export output files
+write.csv(highly_connected_coordinated_entities, "highly_connected_coordinated_entities.csv")
+write.graph(highly_connected_g, "highly_connected_g.graphml", format="graphml")
