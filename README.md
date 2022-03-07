@@ -8,14 +8,14 @@ Given a link to a CSV returned by a [CrowdTangle Search](https://help.crowdtangl
 
 While Facebook provides the link type post to share links, many users started long ago to share their links in the message of image posts as these type of posts tend to perform better than links ones. This is not an issue for CooRnet as CrowdTangle recognizes links shared in such a way and strips the links from the message text.
 
-However, our most recent analysis pointed out the emergence of a relatively new strategy used by coordinated link sharing networks to avoid being detected as such. The link is not anymore shared in the post itself but in the first comment of an image post. The image itself often contains a click-bait text and the message includes a pointing down arrow emoji to the link in the comment.  
+However, our most recent analysis pointed out the emergence of a relatively new strategy used by coordinated link sharing networks to avoid being detected as such. The link is not anymore shared in the post itself but in the first comment of an image post. The image itself often contains a click-bait text and the message includes a pointing down arrow emoji to the link in the comment.
 
 ![](images/img0.png)
 
 Given the fact that CrowdTangle do not provide access to the comments, CLSB networks adopting this strategy can't be detected by CooRnet.
 
-We first described this behavior in  
-  
+We first described this behavior in
+
 Giglietto, Fabio and Terenzi, Massimo and Marino, Giada and Marino, Giada and Righetti, Nicola and Rossi, Luca, Adapting to Mitigation Efforts: Evolving Strategies of Coordinated Link Sharing on Facebook (December 29, 2020). Available at SSRN: <https://ssrn.com/abstract=3775469> or <http://dx.doi.org/10.2139/ssrn.3775469>.
 
 CooRnet_ImgTxt address this limit by looking at accounts that share images with the same text in a very short period of time and repeatedly.
@@ -32,7 +32,7 @@ In a few minutes (the waiting time depends on the number of posts you requested)
 
 ![](images/img2.png)
 
-Copy the link to the CSV file (you may also want to download it as the file won't be permanently stored). Past the link in the script. Please use [blueapp.r](https://github.com/fabiogiglietto/CooRnet_ImgTxt/blob/main/blueapp.R) for a Facebook search or [rainbowapp.r](https://github.com/fabiogiglietto/CooRnet_ImgTxt/blob/main/rainbowapp.R) for an Instagram search.
+Copy the link to the CSV file (you may also want to download it as the file won't be permanently stored). Paste the link in the script. Please use [blueapp.r](https://github.com/fabiogiglietto/CooRnet_ImgTxt/blob/main/blueapp.R) for a Facebook search or [rainbowapp.r](https://github.com/fabiogiglietto/CooRnet_ImgTxt/blob/main/rainbowapp.R) for an Instagram search.
 
 ![](images/img3.png)
 
