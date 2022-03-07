@@ -3,7 +3,7 @@ library(readr)
 library(igraph)
 
 ### start parameters ###
-# start from the link to a CSV dataset of Facebook posts returned by a CrowdTangle Search export
+# start from the link to a CSV dataset of Instagram posts returned by a CrowdTangle Search export
 ct_histdata_csv_1 = "" # copy/post the link to the CSV from the email recieved
 # ct_histdata_csv_2 = ""
 coordination_internal <- "60 secs" # set your coordination internal
@@ -19,7 +19,6 @@ for (i in 1:length(csv_v)) {
   
   df <- readr::read_csv(col_types = cols(
     .default = col_skip(),
-    platformId = col_character(),
     type = col_character(),
     date = col_character(),
     imageText = col_character(),
@@ -44,7 +43,7 @@ names(unique_imageText) <- c("imageText", "ct_shares")
 unique_imageText <- subset(unique_imageText, unique_imageText$ct_shares >1)
 unique_imageText$imageText <- as.character(unique_imageText$imageText)
 df <- subset(df, df$imageText %in% unique_imageText$imageText)
-df$account.url <- paste0("http://www.facebook.com/", df$platformId)
+df$account.url <- paste0("https://www.instagram.com/", df$account.handle)
 
 # for each unique img_text execute CooRnet code to find coordination
 datalist <- list()
