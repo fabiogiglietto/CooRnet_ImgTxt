@@ -16,7 +16,7 @@ Given the fact that CrowdTangle do not provide access to the comments, CLSB netw
 
 We first described this behavior in
 
-Giglietto, Fabio and Terenzi, Massimo and Marino, Giada and Marino, Giada and Righetti, Nicola and Rossi, Luca, Adapting to Mitigation Efforts: Evolving Strategies of Coordinated Link Sharing on Facebook (December 29, 2020). Available at SSRN: <https://ssrn.com/abstract=3775469> or <http://dx.doi.org/10.2139/ssrn.3775469>.
+Giglietto, Fabio and Terenzi, Massimo and Marino, Giada and Righetti, Nicola and Rossi, Luca, Adapting to Mitigation Efforts: Evolving Strategies of Coordinated Link Sharing on Facebook (December 29, 2020). Available at SSRN: <https://ssrn.com/abstract=3775469> or <http://dx.doi.org/10.2139/ssrn.3775469>.
 
 CooRnet_ImgTxt address this limit by looking at accounts that share images with the same text in a very short period of time and repeatedly.
 
