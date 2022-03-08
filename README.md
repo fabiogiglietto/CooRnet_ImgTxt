@@ -22,7 +22,7 @@ CooRnet_ImgTxt address this limit by looking at accounts that share images with 
 
 ## Usage
 
-Open [CrowdTangle Search](https://help.crowdtangle.com/en/articles/3873721-crowdtangle-search-faq) and perform your desired Facebook or Instagram query and export your results by clicking the download button.
+Open [CrowdTangle Search](https://help.crowdtangle.com/en/articles/3873721-crowdtangle-search-faq) and perform your desired Facebook or Instagram query and export your results by clicking the download button (make sure to keep the default comma CSV delimiter).
 
 ![](images/img1.png)
 
