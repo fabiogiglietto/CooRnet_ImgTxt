@@ -36,7 +36,9 @@ Copy the link to the CSV file (you may also want to download it as the file won'
 
 ![](images/img3.png)
 
-You may want to customize the coordination_interval (time in second between the share of the same image to label it as a rapid share) and the percentile_edge_weight (in a nutshell is the quantile used to cut the network by including only accounts that performed rapid share of the same images repetedly) parameter to fine-tune your results.
+Please ensure that newformat parameter matches the CSV format (with - FALSE - or without spaces - TRUE - in the field names) configured for your CrowdTangle account/team/dashboard.
+
+You may want to customize the coordination_interval (time in second between the share of the same image to label it as a rapid share) and the percentile_edge_weight (in a nutshell is the quantile used to cut the network by including only accounts that performed rapid share of the same images repeatedly) parameter to fine-tune your results.
 
 Run the script and wait patiently that the progress bar reaches 100%. Ones finished, your Environment should resemble something like this:
 
