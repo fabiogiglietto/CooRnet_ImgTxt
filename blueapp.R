@@ -4,8 +4,8 @@ library(igraph)
 
 ### start parameters ###
 # start from the link to a CSV dataset of Facebook posts returned by a CrowdTangle Search export
-newformat=FALSE
-ct_histdata_csv_1 = "" # copy/paste the link to the CSV from the email received
+newformat=FALSE # switch to TRUE if your CT account is configured for new CSV format
+ct_histdata_csv_1 = ""
 # ct_histdata_csv_2 = ""
 coordination_internal <- "60 secs" # set your coordination internal
 percentile_edge_weight <- 0.9 # determines the minimum number of repetition used to conside an account as coordinated

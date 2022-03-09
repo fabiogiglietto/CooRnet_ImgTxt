@@ -4,7 +4,8 @@ library(igraph)
 
 ### start parameters ###
 # start from the link to a CSV dataset of Instagram posts returned by a CrowdTangle Search export
-ct_histdata_csv_1 = "" # copy/paste the link to the CSV from the email received
+newformat=FALSE # switch to TRUE if your CT account is configured for new CSV format
+ct_histdata_csv_1 = ""
 # ct_histdata_csv_2 = ""
 coordination_internal <- "60 secs" # set your coordination internal
 percentile_edge_weight <- 0.9 # determines the minimum number of repetition used to label an account as coordinated
@@ -17,18 +18,32 @@ allposts <- NULL
 
 for (i in 1:length(csv_v)) {
   
-  df <- readr::read_csv(col_types = cols(
-    .default = col_skip(),
-    type = col_character(),
-    date = col_character(),
-    imageText = col_character(),
-    account.name = col_character(),
-    account.handle = col_character(),
-    postUrl = col_character()),
-    file =  csv_v[i])
-  
+  if (newformat == TRUE) {
+    
+    df <- readr::read_csv(col_types = cols(
+      .default = col_skip(),
+      type = col_character(),
+      date = col_character(),
+      imageText = col_character(),
+      account.name = col_character(),
+      account.handle = col_character(),
+      postUrl = col_character()),
+      file =  csv_v[i])
+    
+  } else {
+    df <- readr::read_csv(col_types = cols(
+      .default = col_skip(),
+      Type = col_character(),
+      `Post Created` = col_character(),
+      `Image Text` = col_character(),
+      `Page Name` = col_character(),
+      `User Name` = col_character(),
+      URL = col_character()),
+      file =  csv_v[i])
+    
+    names(df) <- c("type", "date", "imageText", "account.name", "account.handle", "postUrl")
+  }
   allposts <- rbind(allposts, df)
-  
 }
 
 allposts <- allposts %>% distinct()
