@@ -5,7 +5,7 @@ library(igraph)
 ### start parameters ###
 # start from the link to a CSV dataset of Instagram posts returned by a CrowdTangle Search export
 newformat=FALSE # switch to TRUE if your CT account is configured for new CSV format
-ct_histdata_csv_1 = ""
+ct_histdata_csv_1 = "" # copy/paste the URL of your CSV file
 # ct_histdata_csv_2 = ""
 coordination_internal <- "60 secs" # set your coordination internal
 percentile_edge_weight <- 0.9 # determines the minimum number of repetition used to label an account as coordinated
