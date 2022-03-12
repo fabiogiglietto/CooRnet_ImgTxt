@@ -36,10 +36,12 @@ for (i in 1:length(csv_v)) {
       Type = col_character(),
       `Post Created` = col_character(),
       `Image Text` = col_character(),
-      `Page Name` = col_character(),
+      Account = col_character(),
       `User Name` = col_character(),
       URL = col_character()),
       file =  csv_v[i])
+    
+    df <- dplyr::select(df, c("Type", "Post Created", "Image Text", "Account", "User Name", "URL", "Image Text"))
     
     names(df) <- c("type", "date", "imageText", "account.name", "account.handle", "postUrl")
   }

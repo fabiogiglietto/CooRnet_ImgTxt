@@ -5,7 +5,7 @@ library(igraph)
 ### start parameters ###
 # start from the link to a CSV dataset of Facebook posts returned by a CrowdTangle Search export
 newformat=FALSE # switch to TRUE if your CT account is configured for new CSV format
-ct_histdata_csv_1 = ""
+ct_histdata_csv_1 = "2022-03-11-19-36-11-CET-search-csv-export.csv"
 # ct_histdata_csv_2 = ""
 coordination_internal <- "60 secs" # set your coordination internal
 percentile_edge_weight <- 0.9 # determines the minimum number of repetition used to conside an account as coordinated
@@ -19,18 +19,18 @@ allposts <- NULL
 for (i in 1:length(csv_v)) {
   
   if (newformat == TRUE) {
-  
-  df <- readr::read_csv(col_types = cols(
-    .default = col_skip(),
-    platformId = col_character(),
-    type = col_character(),
-    date = col_character(),
-    imageText = col_character(),
-    account.name = col_character(),
-    account.handle = col_character(),
-    postUrl = col_character()),
-    file =  csv_v[i])
-  
+    
+    df <- readr::read_csv(col_types = cols(
+      .default = col_skip(),
+      platformId = col_character(),
+      type = col_character(),
+      date = col_character(),
+      imageText = col_character(),
+      account.name = col_character(),
+      account.handle = col_character(),
+      postUrl = col_character()),
+      file =  csv_v[i])
+    
   } else {
     df <- readr::read_csv(col_types = cols(
       .default = col_skip(),
@@ -42,6 +42,8 @@ for (i in 1:length(csv_v)) {
       `User Name` = col_character(),
       URL = col_character()),
       file =  csv_v[i])
+    
+    df <- dplyr::select(df, c("Facebook Id", "Type", "Post Created", "Image Text", "Page Name", "User Name", "URL", "Image Text"))
     
     names(df) <- c("platformId", "type", "date", "imageText", "account.name", "account.handle", "postUrl")
   }
