@@ -22,21 +22,25 @@ CooRnet_ImgTxt address this limit by looking at accounts that share images with 
 
 ## Usage
 
-Open [CrowdTangle Search](https://help.crowdtangle.com/en/articles/3873721-crowdtangle-search-faq) and perform your desired Facebook or Instagram query and export your results by clicking the download button (make sure to keep the default comma CSV delimiter).
+Open [CrowdTangle Search](https://help.crowdtangle.com/en/articles/3873721-crowdtangle-search-faq) and perform your desired Facebook or Instagram query and export your results by clicking the download button (make sure to select the number of posts you want to be returned as the default is 10,000 and keep the default comma CSV delimiter).
 
 ![](images/img1.png)
 
-You can export up to 300k posts, but the scripts allow combining multiple CSV files. If your query exceeds the 300k posts you can split it in multiple queries.
+You can export up to 300k posts, but the scripts allow combining multiple CSV files.
+
+If your query exceeds the 300k posts you can split it in multiple queries. Please keep in mind that since we are working on text in images, you may want to filter for "Photos" type posts on Facebook.
 
 In a few minutes (the waiting time depends on the number of posts you requested), you will receive a message in your inbox with a link to the CSV of your query just created for you.
 
 ![](images/img2.png)
 
-Copy the link to the CSV file (you may also want to download it as the file won't be permanently stored). Paste the link in the script. Please use [blueapp.r](https://github.com/fabiogiglietto/CooRnet_ImgTxt/blob/main/blueapp.R) for a Facebook search or [rainbowapp.r](https://github.com/fabiogiglietto/CooRnet_ImgTxt/blob/main/rainbowapp.R) for an Instagram search.
+Copy the link to the CSV file (you may also want to download it as the file won't be permanently stored). Paste the link in the script. Please use [blueapp.r](https://github.com/fabiogiglietto/CooRnet_ImgTxt/blob/main/blueapp.R) for a Facebook search, [rainbowapp.r](https://github.com/fabiogiglietto/CooRnet_ImgTxt/blob/main/rainbowapp.R) for an Instagram search or [crossapp.r](https://github.com/fabiogiglietto/CooRnet_ImgTxt/blob/main/crossapp.R) for mixing Facebook and Instagram searches.
 
 ![](images/img3.png)
 
 Please ensure that newformat parameter matches the CSV format (with - FALSE - or without spaces - TRUE - in the field names) configured for your CrowdTangle account/team/dashboard.
+
+You can analyze multiple CSV files at same time including outputs from Facebook and Instagram
 
 You may want to customize the coordination_interval (time in second between the share of the same image to label it as a rapid share) and the percentile_edge_weight (in a nutshell is the quantile used to cut the network by including only accounts that performed rapid share of the same images repeatedly) parameter to fine-tune your results.
 
