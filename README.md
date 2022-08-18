@@ -1,6 +1,6 @@
-# CooRnet_ImgTxt
+# Coordinated Image Text Sharing Behavior (CITSB) 
 
-Simple r scripts that reuse some [CooRnet](https://coornet.org/) code and logic to detect coordinated networks on Facebook and Instagram accounts that repeatedly share images with identical text in a short period of time.
+This simple r scripts reuse some [CooRnet](https://coornet.org/) code and logic to detect coordinated networks on Facebook and Instagram accounts that perform Coordinated Image Text Sharing Behavior(CITSB) by repetedly sharing images with identical text in a short period of time from each other. 
 
 Given one or more links to a CSV returned by a [CrowdTangle Search](https://help.crowdtangle.com/en/articles/3873721-crowdtangle-search-faq) export and a coordination interval, returns a list that include a dataframe of coordinated accounts, a graphml file that can be opened and visualized in Gephi and a variable q that represents the threshold number of rapid-shares repetition used to label coordinated accounts.
 
